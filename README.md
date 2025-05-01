@@ -71,4 +71,4 @@ No worry — we’re here to help! Wave your hand wildly and we’ll come to you
 ## Authors
 
 This workshop was authored by [Sébastien Besnier](https://github.com/sebsheep) and [Jordane Grenat](https://github.com/jgrenat).
-Feel free to use it for yourself or to teach other! Any feedback is welcome! 
+Feel free to use it for yourself or to teach others! Any feedback is welcome! 
