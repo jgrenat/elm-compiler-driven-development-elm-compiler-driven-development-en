@@ -3,7 +3,7 @@
 
 <img src="./resources/elm-logo.svg" alt="" role="presentation" width="150" height="150" />
 
-_If you're looking for the french version of this workshop, [click here](https://github.com/jgrenat/elm-compiler-driven-development)._
+_🇫🇷 Si vous cherchez une version française de ce workshop, [cliquez ici](https://github.com/jgrenat/elm-compiler-driven-development)._
 
 Welcome to our workshop to discover the Elm language and a new programming paradigm: let the compiler tell you what to do!
 
