@@ -53,8 +53,8 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div [ style "padding" "1rem" ]
-        [ h1 [] [ text "Gardez la ligne !" ]
-        , p [] [ text "Cliquez à différents endroits dans le cadre ci-dessous pour tracer des lignes." ]
+        [ h1 [] [ text "Draw lines!" ]
+        , p [] [ text "Click at different spots in the frame below to draw lines." ]
         , svg
             [ style "border" "1px black solid"
             , width 800

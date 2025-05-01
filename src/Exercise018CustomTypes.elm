@@ -11,8 +11,8 @@ type Color
 
 main =
     ul []
-        [ li [ style "color" (colorToString Red) ] [ text "Ce texte est en rouge" ]
-        , li [ style "color" (colorToString Green) ] [ text "Ce texte est en vert (j'espère)" ]
+        [ li [ style "color" (colorToString Red) ] [ text "This text is red" ]
+        , li [ style "color" (colorToString Green) ] [ text "This text is green (hopefully)" ]
         ]
 
 

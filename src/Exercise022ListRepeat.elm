@@ -28,10 +28,10 @@ update msg model =
 
 view : Model -> Html Msg
 view model =
-    -- Il y a deux erreurs de compilation ici... Quelque chose me dit que la seconde
-    -- est peut-être la plus utile...
+    -- There are two compilation errors here...
+    -- Something tells me the second mistake might be the most useful one...
     div [ style "padding" "1rem" ]
-        [ button [ onClick Increment, style "margin-bottom" "1em" ] [ text "Ajouter une allumette" ]
+        [ button [ onClick Increment, style "margin-bottom" "1em" ] [ text "Add a match" ]
         , div [] (List.repeat image model.count)
         ]
 

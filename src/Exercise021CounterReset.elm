@@ -32,7 +32,7 @@ view model =
         [ span [] [ text (String.fromInt model.count) ]
         , text " "
         , button [ onClick Increment ] [ text "+1" ]
-        , button [ onClick Reset ] [ text "Réinitialiser à 0" ]
+        , button [ onClick Reset ] [ text "Reset to 0" ]
         ]
 
 

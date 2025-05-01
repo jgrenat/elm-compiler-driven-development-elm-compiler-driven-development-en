@@ -6,6 +6,6 @@ import Html.Attributes exposing (id, style)
 
 main =
     ul []
-        [ li [ style "color" "red" ] [ text "Ce texte est en rouge" ]
-        , li [ id "greenText", style "color-green" ] [ text "Ce texte est en vert (j'espère)" ]
+        [ li [ style "color" "red" ] [ text "This text is red" ]
+        , li [ id "greenText", style "color-green" ] [ text "This text is green (hopefully)" ]
         ]

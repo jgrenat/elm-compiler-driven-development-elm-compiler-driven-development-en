@@ -4,7 +4,7 @@ import Html exposing (Html)
 
 
 main =
-    Html.text ("La multiplication de 19876 par 34678 a pour résultat " ++ result)
+    Html.text ("The multiplication of 19876 by 34678 results in " ++ result)
 
 
 result =

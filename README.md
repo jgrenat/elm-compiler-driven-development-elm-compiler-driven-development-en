@@ -1,23 +1,25 @@
-# Compiler Driven Development avec Elm !
+# Compiler Driven Development with Elm!
+
 
 <img src="./resources/elm-logo.svg" alt="" role="presentation" width="150" height="150" />
 
-Bienvenue dans notre workshop pour découvrir le langage Elm et un nouveau paradigme de programmation : 
-laisser le compilateur vous dire quoi faire !
+_If you're looking for the french version of this workshop, [click here](https://github.com/jgrenat/elm-compiler-driven-development)._
 
-Mais d'abord, commençons par installer Elm :
+Welcome to our workshop to discover the Elm language and a new programming paradigm: let the compiler tell you what to do!
 
-## Installation de Elm
+But first, let's start by installing Elm:
 
-Deux méthodes pour installer Elm. Vous pouvez soit le télécharger et l'installer [depuis cette page](https://guide.elm-lang.org/install/elm.html) (recommandé) du guide officiel, soit utiliser `npm` avec la commande suivante :
+## Installing Elm
 
-```
+There are two ways to install Elm. You can either [download and install it from this page (recommended) of the official guide](https://guide.elm-lang.org/install/elm.html), or use npm with the following command:
+
+```bash
 npm install --global elm
 ```
 
-## Installer le support Elm pour votre éditeur
+## Set Up Elm Plugin in your Editor
 
-Maintenant que Elm est installé, vous pouvez configurer votre éditeur de texte pour la coloration syntaxique !
+ow that Elm is installed, you can set up your text editor for syntax highlighting!
 
 - [Atom](https://atom.io/packages/language-elm)
 - [Emacs](https://github.com/jcollard/elm-mode)
@@ -26,44 +28,47 @@ Maintenant que Elm est installé, vous pouvez configurer votre éditeur de texte
 - [Vim](https://github.com/ElmCast/elm-vim)
 - [VS Code](https://marketplace.visualstudio.com/items?itemName=Elmtooling.elm-ls-vscode)
 
-**Note :** l'atelier a été pensé pour fonctionner avec les erreurs telles qu'elles sont affichées par le compilateur. Les messages affichés par les
-plugins ci-dessus ne correspondent pas exactement aux erreurs du compilateur.
-Nous vous conseillons donc "d'ignorer" les erreurs affichées dans votre éditeur
-_pour cet atelier_ et de plus se référer à celles affichées dans le navigateur.
+**Note :** This workshop is designed to work with the error messages as shown by the compiler. The messages displayed by the plugins listed above may not exactly match the compiler’s errors.
+We therefore recommend "ignoring" the errors shown in your editor _for this workshop_ and instead focusing on those displayed in your browser.
 
 
-## Récupérer l'atelier
+## Get the workshop
 
-Vous pouvez maintenant récupérer le code de cet atelier, soit [en téléchargeant l'archive](https://github.com/jgrenat/elm-compiler-driven-development/archive/master.zip), soit en le clonant :
+You can now get the code for this workshop either by [downloading the archive](https://github.com/jgrenat/elm-compiler-driven-development/archive/master.zip), or by cloning it:
 
-```
-git clone https://github.com/jgrenat/elm-compiler-driven-development.git
-cd elm-compiler-driven-development
+```bash
+git clone https://github.com/jgrenat/elm-compiler-driven-development-en.git
+cd elm-compiler-driven-development-en
 ```
 
-Une fois l'atelier récupéré par l'une de ces deux méthodes, vous pouvez lancer la commande suivante à la racine du projet :
+Once you have the workshop files using one of the two methods above, run the following command at the root of the project:
 
-```
+```bash
 elm reactor
 ```
 
-Le rendu des exercices est disponible à l'adresse http://localhost:8000/src
+The exercises files can be accessed at http://localhost:8000/src
 
-## Déroulement de l'atelier
+## Workshop Flow
 
-Chaque fichier représente un exercice. Vous pouvez commencer un exercice en l'ouvrant dans elm reactor, par exemple à 
-l'adresse http://localhost:8000/src/Exercise010String.elm pour le premier. 
+Each file represents an exercise. You can begin an exercise by opening it in Elm Reactor, for example at
+http://localhost:8000/src/Exercise010String.elm for the first one. 
 
-Ne soyez pas surpris si une erreur apparaît, c'est normal ! Lisez-la attentivement, le compilateur est votre mentor pour la corriger ! 💪
+Don’t be surprised if an error appears — that’s normal! Read it carefully; the compiler is your mentor to help you fix it! 💪
 
-Une fois que le code compile, c'est que l'exercice est réussi, vous pouvez passer à l'exercice suivant ! 🎉
+Once the code compiles, the exercise is complete. Congrats! You can move on to the next one! 🎉
 
-Une fois les exercices "simples" réussis, vous pouvez passer au niveau supérieur dans le dossier `Advanced`.
-Vous utiliserez alors la même méthode pour développer de nouvelles fonctionnalités sur une application
-existante : écrire un code provoquant une erreur de compilation et laisser le compilateur
-vous guider. C'est un procédé très efficace quelle que soit la taille du projet sur lequel vous travaillez.
-C'est ce qu'on appelle le _Compiler-Driven-Development_ !
+After finishing the first exercises, you can move to the next level in the `Advanced` folder.
 
-## Vous êtes bloqué ?
+You’ll follow the same path to develop new features in an existing application: write code that triggers a compilation error and let the compiler guide you. This is a very effective approach, no matter the size of your project.
+This is what's called Compiler-Driven Development!
 
-Pas de panique, on est là pour vous aider ! Levez la main frénétiquement et on arrive ! 🙋‍♀️🙋‍♂️
+## Stuck?
+
+No worry — we’re here to help! Wave your hand wildly and we’ll come to you! 🙋‍♀️🙋‍♂️
+
+
+## Authors
+
+This workshop was authored by [Sébastien Besnier](https://github.com/sebsheep) and [Jordane Grenat](https://github.com/jgrenat).
+Feel free to use it for yourself or to teach other! Any feedback is welcome! 

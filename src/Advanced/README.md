@@ -1,26 +1,23 @@
-# Exercices avancés
+# Advanced Exercises
 
-Déjà là ? Vous avez été rapide ! Félicitation, vous avez terminé la première partie ! Maintenant, c'est à 
-vous de jouer sur des applications plus conséquentes.
+Already here? You were quick! Congratulations, you've completed the first part! 
+Now it's time for you to dive into more complex applications.
 
-Cette fois-ci le code compile, vous pouvez donc lancer l'appli pour comprendre
-sa logique.
+This time, the code compiles, so you can run the app to understand its logic.
 
-Puis vous pourrez commencer à modifier le code en provoquant volontairement 
-une erreur de compilation, grâce à quoi le compilateur pourra vous guider.
-C'est une stratégie courante en Elm. 
+Then, you can start modifying the code by intentionally causing a compilation error, which will let the compiler guide you. 
+This is a common strategy in Elm.
 
-## Dessine-moi un Orme
+## Draw Me an Elm Tree
 
-La première application est dans le fichier `Advanced/ExerciseDraw.elm`. Vous pouvez
-y dessiner des segments en cliquant à deux endroits du cadre (on va concurrencer 
-Photoshop bientôt !).
+The first application is in the `Advanced/ExerciseDraw.elm` file. 
+You can draw segments by clicking on two points in the frame (we'll be competing with Photoshop soon!).
 
-### Annuler la dernière action
+### Undo the Last Action
 
-On vous propose d'implémenter dans un premier temps un bouton pour annuler la dernière ligne tracée.
+Let's implement a button to undo the last line drawn!
 
-Vous pouvez ajouter le bouton suivant puis vous laisser guider par le compilateur.
+You can add the following button and let the compiler guide you:
 
 ```elm
 Html.button
@@ -28,31 +25,30 @@ Html.button
     , style "font-size" "20pt"
     , style "margin" "5px"
     ]
-    [ Html.text "Annuler" ]
+    [ Html.text "Undo" ]
 ```
 
-### Rejouer la dernière action annulée
+### Replay the Last Action Undone
 
-Si l'utilisateur a annulé des lignes, faites apparaître un bouton "Rétablir". Lorsqu'on clique dessus,
-on rajoute la dernière ligne annulée.
+If the user has undone any lines, display an "Redo" button. When clicked, the last undone line is redrawn.
 
-_Indication :_ il faudra probablement rajouter dans le `Model` une liste des lignes annulées...
+_Hint:_ You’ll probably need to add a list of undone lines in the `Model`...
 
-**Attention**: si l'utilisateur annule une droite et en redessine une autre, la droite 
-annulée est "perdue", on ne peut plus la rétablir.
+**Warning**: If the user undoes a line and then draws another, the undone line is "lost" and can't be redone.
 
-## Jeu du Memory
-La deuxième application est dans le fichier `Advanced/ExerciseMemoryGame.elm`.
-Il s'agit d'un jeu de memory où il faut retrouver des paires d'animaux.
 
-On vous propose d'implémenter deux nouvelles fonctionnalités à cette application.
+## Memory Game
 
-L'une assez simple, l'autre beaucoup plus complexe.
+The second application is in the `Advanced/ExerciseMemoryGame.elm` file. 
+It’s a memory game where you have to find pairs of animals.
 
-### Rejouer
-Une fois la partie terminée, on voudrait pouvoir relancer une nouvelle 
-partie. Nous vous proposons d'insérer le bouton suivant pour qu'il
-n'apparaisse qu'une fois la partie terminée.
+We ask you to implement two new features for this application, one that is fairly simple
+and the other one that is much more complex.
+
+### Play again
+
+Once the game is over, we would like to be able to start a new game. 
+We suggest adding the following button, which should only appear once the game is finished:
 
 ```elm
 Html.button
@@ -60,27 +56,25 @@ Html.button
     , style "font-size" "20pt"
     , style "margin" "5px"
     ]
-    [ Html.text "Recommencer" ]
+    [ Html.text "Play again" ]
 ```
 
-Maintenant, vous devriez avoir une erreur de compilation... Laissez-vous
-guider 😉 !
+Now, you should have a compilation error... Let the compiler guide you 😉!
 
-### Bombe !
+### Bomb!
 
-On veut rajouter une bombe : lorsque le joueur clique dessus une première fois,
-la bombe est amorcée. Si le joueur clique une seconde fois dessus, la partie
-est perdue !
+We want to add a bomb below one of the cards: when the player clicks on it for the first time, the bomb is primed. 
+If the player clicks on it a second time, the game is lost!
 
-Voici l'emoji "bombe" que vous pouvez copier/coller : 💣 
+Here is the "bomb" emoji you can copy/paste: 💣 
 
-Nous vous proposons de modifier le type `Card` de cette façon :
+We suggest modifying the `Card type like this:
 
 ```elm
 type Card
     = Card Emoji Instance
-    | Bomb -- Bombe non amorcée
-    | PrimedBomb -- Bombe amorcée
+    | Bomb -- Unprimed bomb
+    | PrimedBomb -- Primed bomb
 ```
 
-Et encore une fois, laissez-vous guider par le compilateur !
+And once again, let the compiler guide you!

@@ -8,18 +8,18 @@ import Http
 
 
 
--- Jusqu'à maintenant, nos programmes étaient plutôt simples et ne dépendaient pas du monde extérieur.
+-- Until now, our programs have been fairly simple and didn't depend on the outside world.
 --
--- En Elm, on considère que le monde extérieur est "dangereux" : que se passe-t-il quand un appel réseau
--- échoue ? Ou retourne un format inattendu ?
+-- In Elm, the outside world is considered "dangerous": what happens when a network request
+-- fails? Or returns an unexpected format?
 --
--- On délègue donc cette tâche au _runtime_ qui va nous protéger et nous forcer à gérer ces cas d'erreur
--- (en Elm, les gestes barrières, c'est tout le temps 😷 ).
+-- So we delegate this task to the _runtime_, which protects us and forces us to handle such errors
+-- (in Elm, protective measures are always on 😷).
 --
--- Ainsi, pour effectuer un appel HTTP, on passe par le concept de "commande": notre fonction d'update
--- renvoie maintenant le nouveau modèle ET une commande à exécuter (dans notre cas, une requête HTTP).
+-- To perform an HTTP request, we use the concept of a "command": our update function now returns
+-- the new model AND a command to execute (in our case, an HTTP request).
 --
--- Le runtime effectue l'appel, puis nous retourne le résultat dans un message (dans notre cas `QuoteFetched`).
+-- The runtime performs the request, then returns the result to us in a message (in our case, `QuoteFetched`).
 
 
 type alias Model =
@@ -28,12 +28,12 @@ type alias Model =
 
 initialModel : Model
 initialModel =
-    { quote = "Cliquez sur un bouton pour charger une citation 😉" }
+    { quote = "Click on any button to load a quote 😉" }
 
 
 type Msg
     = QuoteButtonClicked String
-      -- L'appel HTTP peut échouer, c'est pourquoi on reçoit un `Result` qui contient soit une erreur, soit une citation
+      -- The HTTP request can fail, which is why we receive a `Result` that contains either an error (`Http.Error`) or a quote (`String`).
     | QuoteFetched (Result Http.Error String)
 
 
@@ -41,21 +41,21 @@ update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
         QuoteButtonClicked url ->
-            ( { model | quote = "Chargement..." }, Http.get { expect = Http.expectString QuoteFetched } )
+            ( { model | quote = "Loading..." }, Http.get { expect = Http.expectString QuoteFetched } )
 
         QuoteFetched result ->
             case result of
                 Err error ->
-                    ( { model | quote = "Erreur! 😱" }, Cmd.none )
+                    ( { model | quote = "Error! 😱" }, Cmd.none )
 
 
 view : Model -> Html Msg
 view model =
     div []
         [ div []
-            [ button [ onClick (QuoteButtonClicked "/resources/quote-1.txt"), style "margin-right" "1em" ] [ text "Récupérer la citation 1" ]
-            , button [ onClick (QuoteButtonClicked "/resources/quote-2.txt"), style "margin-right" "1em" ] [ text "Récupérer la citation 2" ]
-            , button [ onClick (QuoteButtonClicked "/resources/quote-3.txt") ] [ text "Récupérer la citation 3" ]
+            [ button [ onClick (QuoteButtonClicked "/resources/quote-1.txt"), style "margin-right" "1em" ] [ text "Get quote 1" ]
+            , button [ onClick (QuoteButtonClicked "/resources/quote-2.txt"), style "margin-right" "1em" ] [ text "Get quote 2" ]
+            , button [ onClick (QuoteButtonClicked "/resources/quote-3.txt") ] [ text "Get quote 3" ]
             ]
         , pre
             [ style "padding" "10px"

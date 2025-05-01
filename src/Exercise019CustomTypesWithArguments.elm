@@ -12,7 +12,7 @@ type Shape
 
 main =
     Html.text
-        ("Un rectangle de côtés 5cm et 3cm a une superficie de "
+        ("A rectangle with sides 5 cm and 3 cm has an area of "
             ++ String.fromFloat (calculateArea (Rectangle 5 3))
             ++ " cm2"
         )

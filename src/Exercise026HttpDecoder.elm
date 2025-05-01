@@ -47,7 +47,7 @@ update msg model =
                             ( Failure errorMsg, Cmd.none )
 
                         _ ->
-                            ( Failure "Erreur Http !", Cmd.none )
+                            ( Failure "Http error!", Cmd.none )
 
 
 
@@ -67,17 +67,17 @@ viewGif model =
     case model of
         Failure errorMsg ->
             div []
-                [ text ("Une erreur est survenue : " ++ errorMsg)
-                , button [ onClick CatButtonClicked ] [ text "Retente !" ]
+                [ text ("An error occurred: " ++ errorMsg)
+                , button [ onClick CatButtonClicked ] [ text "Try again!" ]
                 ]
 
         Loading ->
-            text "Chargement..."
+            text "Loading..."
 
         Success cat ->
             div []
                 [ h1 [] [ text cat.title ]
-                , button [ onClick CatButtonClicked, style "display" "block" ] [ text "Une autre !" ]
+                , button [ onClick CatButtonClicked, style "display" "block" ] [ text "Another one!" ]
                 , img [ src cat.url ] []
                 ]
 
@@ -92,10 +92,10 @@ getRandomCatGif =
 
 gifDecoder : Decoder Cat
 gifDecoder =
-    -- Elm ne peut pas deviner la forme du JSON qu'on reçoit, il faut donc lui indiquer quels champs
-    -- nous intéressent avec ce décodeur.
+    -- Elm can't guess the shape of the JSON we receive, so we need to tell it which fields
+    -- we're interested in using this decoder.
     --
-    -- Le JSON ressemble à :
+    -- The JSON looks like this:
     -- {
     --   "data": {
     --     "title": "Tired cat",
@@ -104,7 +104,8 @@ gifDecoder =
     --   },
     --   ...,
     -- }
-    -- Vous pouvez voir sa forme complète au lien suivant :
+    --
+    -- You can see the full structure at the following link:
     -- https://api.giphy.com/v1/gifs/random?api_key=kOZdCy0KDR2n8Y83kawP0zdqUMqpHYRj&tag=cat
     Json.Decode.map2 Cat
         (Json.Decode.at [ "data", "title" ] Json.Decode.int)
@@ -121,5 +122,5 @@ main =
 
 
 
--- Inspiré de l'exemple :
+-- Inspired by:
 -- https://elm-lang.org/examples/cat-gifs

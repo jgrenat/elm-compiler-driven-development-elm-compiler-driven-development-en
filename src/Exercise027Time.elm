@@ -7,11 +7,11 @@ import Time
 
 
 
--- On cherche à afficher l'heure courante. Pour cela, on doit "s'abonner" (subscribe en anglais) à l'heure
--- courante : le runtime va envoyer des messages régulièrement contenant l'heure courante (sous forme de
--- timestamp/posix).
+-- We want to display the current time. To do this, we need to "subscribe" to the current time:
+-- the runtime will regularly send messages containing the current time (in the form of a
+-- timestamp/Posix).
 --
--- Ainsi, on se protège encore une fois du monde extérieur 😷.
+-- Once again, this protects us from the outside world 😷.
 
 
 type alias Model =
@@ -23,10 +23,10 @@ type alias Model =
 init : () -> ( Model, Cmd Msg )
 init _ =
     ( { zone = Time.utc, time = Time.millisToPosix 0 }
-    , -- Elm nous force à gérer la time zone séparément de l'heure, ce qui nous évite beaucoup de pièges liés
-      -- à la gestion du temps (voir https://gist.github.com/timvisee/fcda9bbdff88d45cc9061606b4b923ca).
+    , -- Elm forces us to handle the time zone separately from the time itself, which helps us avoid
+      -- many common pitfalls related to time handling (see https://gist.github.com/timvisee/fcda9bbdff88d45cc9061606b4b923ca).
       --
-      -- Ici, cette commande récupère la time zone de l'utilisateur.
+      -- This command retrieves the user's time zone:
       Task.perform TimeZoneReceived Time.here
     )
 
@@ -52,7 +52,7 @@ update msg model =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    -- Mais comment spécifier qu'on veut générer un message "Tick" toutes les 1000 millisecondes ?
+    -- But how do we specify that we want to generate a `Tick` message every 1000 milliseconds?
     Time.every 1000
 
 

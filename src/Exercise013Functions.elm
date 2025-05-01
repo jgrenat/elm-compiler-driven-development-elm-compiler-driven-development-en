@@ -9,6 +9,6 @@ add a b =
 
 main =
     div []
-        [ div [] [ text ("5 plus 6 égale " ++ String.fromInt (add 5 6)) ]
-        , div [] [ text ("5 fois 6 égale " ++ String.fromInt (multiply 5 6)) ]
+        [ div [] [ text ("5 plus 6 equals " ++ String.fromInt (add 5 6)) ]
+        , div [] [ text ("5 times 6 equals " ++ String.fromInt (multiply 5 6)) ]
         ]

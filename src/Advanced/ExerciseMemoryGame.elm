@@ -220,10 +220,10 @@ header model =
     Html.div [ style "padding" "10px" ]
         (case model.state of
             Solved ->
-                [ Html.span messageStyle [ Html.text "Félicitation !" ]
+                [ Html.span messageStyle [ Html.text "Congrats!" ]
                 , Html.div []
                     [ Html.span messageStyle
-                        [ Html.text "Rejouer ?" ]
+                        [ Html.text "Play again?" ]
                     ]
                 ]
 
@@ -231,16 +231,16 @@ header model =
                 [ Html.span messageStyle
                     [ Html.text
                         (if matching numPairsInit card1 card2 then
-                            "Paire dévoilée !"
+                            "Pair revealed!"
 
                          else
-                            "Ce n'est pas une paire, essayez à nouveau"
+                            "It's not a pair, try again."
                         )
                     ]
                 ]
 
             _ ->
-                [ Html.span messageStyle [ Html.text "Cliquez sur les cartes pour les révéler" ] ]
+                [ Html.span messageStyle [ Html.text "Click on cards to reveal them" ] ]
         )
 
 
@@ -326,7 +326,7 @@ messageStyle =
 
 
 
--- GESTION DES EMOJIS
+-- HANDLING EMOJIS
 
 
 type Emoji
@@ -356,4 +356,4 @@ emojisList =
 
 
 
--- inspiré de https://github.com/O-O-Balance/pairs/
+-- Inspired by de https://github.com/O-O-Balance/pairs/

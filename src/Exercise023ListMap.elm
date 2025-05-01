@@ -35,8 +35,8 @@ view : Model -> Html Msg
 view model =
     div []
         [ div []
-            [ button [ onClick (AddShape (Square 50)), style "margin-right" "1em" ] [ text "Ajouter un carré" ]
-            , button [ onClick (AddShape (Circle 50)) ] [ text "Ajouter un cercle" ]
+            [ button [ onClick (AddShape (Square 50)), style "margin-right" "1em" ] [ text "Add a square" ]
+            , button [ onClick (AddShape (Circle 50)) ] [ text "Add a circle" ]
             ]
         , div [ style "padding" "1rem", style "display" "flex" ]
             (List.map viewShape)
