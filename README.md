@@ -19,7 +19,7 @@ npm install --global elm
 
 ## Set Up Elm Plugin in your Editor
 
-ow that Elm is installed, you can set up your text editor for syntax highlighting!
+Now that Elm is installed, you can set up your text editor for syntax highlighting!
 
 - [Atom](https://atom.io/packages/language-elm)
 - [Emacs](https://github.com/jcollard/elm-mode)
