@@ -68,7 +68,7 @@ If the player clicks on it a second time, the game is lost!
 
 Here is the "bomb" emoji you can copy/paste: 💣 
 
-We suggest modifying the `Card type like this:
+We suggest modifying the `Card` type like this:
 
 ```elm
 type Card

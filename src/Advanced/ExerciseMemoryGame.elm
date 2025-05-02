@@ -356,4 +356,4 @@ emojisList =
 
 
 
--- Inspired by de https://github.com/O-O-Balance/pairs/
+-- Inspired by https://github.com/O-O-Balance/pairs/
